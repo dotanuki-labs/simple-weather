@@ -1,3 +1,5 @@
+rootProject.name = "simple-weather"
+
 pluginManagement {
     repositories {
         google()
