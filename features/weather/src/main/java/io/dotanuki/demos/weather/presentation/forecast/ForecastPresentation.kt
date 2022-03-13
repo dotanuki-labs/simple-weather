@@ -1,4 +1,4 @@
-package io.dotanuki.demos.weather.presentation
+package io.dotanuki.demos.weather.presentation.forecast
 
 import iio.dotanuki.demos.weather.R
 import io.dotanuki.demos.weather.domain.RainExpectation

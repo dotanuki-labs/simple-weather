@@ -1,4 +1,4 @@
-package io.dotanuki.demos.weather.ui
+package io.dotanuki.demos.weather.ui.forecast
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.Size
 import iio.dotanuki.demos.weather.R
-import io.dotanuki.demos.weather.navigation.WeatherNavigator
-import io.dotanuki.demos.weather.presentation.WeatherRow
+import io.dotanuki.demos.weather.ui.navigation.WeatherNavigator
+import io.dotanuki.demos.weather.presentation.forecast.WeatherRow
 
 class ForecastRecyclerAdapter(
     private val navigator: WeatherNavigator,

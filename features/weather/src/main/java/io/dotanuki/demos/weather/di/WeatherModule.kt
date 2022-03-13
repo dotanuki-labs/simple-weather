@@ -9,10 +9,10 @@ import io.dotanuki.demos.weather.domain.ForecastRetriever
 import io.dotanuki.demos.weather.infrastrucure.ImagesInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.WeatherInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.WeatherRestService
-import io.dotanuki.demos.weather.presentation.ForecastViewModel
+import io.dotanuki.demos.weather.presentation.forecast.ForecastViewModel
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsViewModel
-import io.dotanuki.demos.weather.ui.ForecastScreen
-import io.dotanuki.demos.weather.ui.WrappedForecastScreen
+import io.dotanuki.demos.weather.ui.forecast.ForecastScreen
+import io.dotanuki.demos.weather.ui.forecast.WrappedForecastScreen
 import io.dotanuki.demos.weather.ui.details.WeatherDetailsScreen
 import io.dotanuki.demos.weather.ui.details.WrappedWeatherDetailsScreen
 import org.kodein.di.DI

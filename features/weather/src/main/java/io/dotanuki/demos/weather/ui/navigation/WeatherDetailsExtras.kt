@@ -1,4 +1,4 @@
-package io.dotanuki.demos.weather.navigation
+package io.dotanuki.demos.weather.ui.navigation
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
