@@ -22,7 +22,7 @@ Implements list and details screen populating data from a Mock API
 
 This project requires
 [latest stable release of Android Studio](https://developer.android.com/studio/releases),
-ie, 7.x.z (Bumblebee) and also should work fine with Beta/Canary versions of the IDE.
+ie Bumblebee (as per this sample is provided) and also should work fine with Beta/Canary versions of the IDE.
 
 Also note that local builds **require JDK11**, since this project compiles against Java11 bytecode.
 
@@ -34,7 +34,7 @@ You can also run tasks from the CLI :
 ./gradlew clean app:assembleDebug
 ```
 
-These tasks also executed by the [CI Workflow](https://github.com/dotanuki-labs/simple-weather/actions
+These tasks also executed by the [CI Workflow](https://github.com/dotanuki-labs/simple-weather/actions)
 
 ## Author
 
