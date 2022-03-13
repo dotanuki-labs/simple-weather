@@ -6,6 +6,7 @@ import io.dotanuki.demos.core.networking.RestServiceBuilder
 import io.dotanuki.demos.core.networking.errors.RemoteServiceIntegrationError
 import io.dotanuki.demos.testing.commons.truth.EspeculativeExecution
 import io.dotanuki.demos.weather.domain.RainExpectation
+import io.dotanuki.demos.weather.domain.RelatedImage
 import io.dotanuki.demos.weather.domain.Weather
 import io.dotanuki.demos.weather.infrastrucure.WeatherInfrastructure
 import io.dotanuki.demos.weather.util.RawForecastResponseBuilder
@@ -48,7 +49,7 @@ class WeatherInfrastructureTests {
                 description = "Sunny",
                 maxTemperature = 15,
                 minTemperature = 10,
-                relatedImageUrl = "https://link.to/image.jpg",
+                relatedImage = RelatedImage("https://link.to/image.jpg"),
                 rainExpectation = RainExpectation.LOW
             ),
             Weather(
@@ -56,7 +57,7 @@ class WeatherInfrastructureTests {
                 description = "Cloudy with showers",
                 maxTemperature = 17,
                 minTemperature = 10,
-                relatedImageUrl = "https://link.to/image.jpg",
+                relatedImage = RelatedImage("https://link.to/image.jpg"),
                 rainExpectation = RainExpectation.HIGH
             )
         )
