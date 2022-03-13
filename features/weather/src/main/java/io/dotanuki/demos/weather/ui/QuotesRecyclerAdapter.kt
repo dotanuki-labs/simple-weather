@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import io.dotanuki.bootstrap.listing.R
+import iio.dotanuki.demos.weather.R
 import io.dotanuki.demos.weather.domain.Quote
 
 class QuotesRecyclerAdapter(private val quotes: List<Quote>) :

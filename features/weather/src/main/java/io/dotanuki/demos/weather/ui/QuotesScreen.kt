@@ -3,7 +3,7 @@ package io.dotanuki.demos.weather.ui
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import io.dotanuki.bootstrap.listing.databinding.ActivityQuotesBinding
+import iio.dotanuki.demos.weather.databinding.ActivityQuotesBinding
 import io.dotanuki.demos.weather.domain.Quote
 import io.dotanuki.demos.weather.presentation.QuotesScreenState
 import io.dotanuki.demos.weather.presentation.QuotesScreenState.Failed
