@@ -1,0 +1,22 @@
+package plugins
+
+import conventions.applyAndroidLibraryConventions
+import conventions.applyKotlinProjectConventions
+import conventions.applyTestLoggingConventions
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class AndroidPlatformModulePlugin : Plugin<Project> {
+
+    override fun apply(target: Project) {
+        target.run {
+            plugins.apply("com.android.library")
+            plugins.apply("kotlin-android")
+            plugins.apply("com.adarshr.test-logger")
+
+            applyKotlinProjectConventions()
+            applyTestLoggingConventions()
+            applyAndroidLibraryConventions()
+        }
+    }
+}

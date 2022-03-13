@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Android Build
+        uses: ./.github/actions/setup-android-build
+
+      - name: Check code formatting
+        run: ./gradlew ktlintCheck detekt --stacktrace
+
+  unit-tests:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Android Build
+        uses: ./.github/actions/setup-android-build
+
+      - name: Run unit tests
+        run: ./gradlew test --stacktrace
+
+      - name: Archive test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: unit-tests-reports
+          path: build/test-reports
+
+  assemble-apk:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Android Build
+        uses: ./.github/actions/setup-android-build
+
+      - name: Assemble production APK
+        run: ./gradlew app:assembleDebug --stacktrace
+
+      - name: Archive APK
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: debug-apk
+          path: app/build/outputs/apk/debug

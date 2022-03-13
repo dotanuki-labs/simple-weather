@@ -1,0 +1,24 @@
+name: "Setup Android build"
+description: "Common steps before running a Gradle command, regarding the Runner OS"
+
+runs:
+  using: "composite"
+  steps:
+      - name: Setup JDK
+        uses: actions/setup-java@v2.5.0
+        with:
+          distribution: 'temurin'
+          java-version: 11
+
+      - name: Setup Cache
+        uses: actions/cache@v2.1.7
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-${{ github.job }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+          restore-keys: ${{ runner.os }}-${{ github.job }}-
+
+      - name: Optimize for Gradle build
+        shell: bash
+        run: ${{ github.action_path }}/setup-gradle-properties.sh

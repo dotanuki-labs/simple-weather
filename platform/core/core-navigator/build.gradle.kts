@@ -1,0 +1,17 @@
+
+plugins {
+    id("modules.platform.android")
+}
+
+dependencies {
+    implementation(projects.platform.common.commonKodein)
+
+    implementation(Deps.androidxAppCompat)
+    implementation(Deps.kodeinDi)
+    implementation(Deps.kodeinType)
+
+    testImplementation(projects.platform.testing.testingCommons)
+    testImplementation(Deps.junit4)
+    testImplementation(Deps.truth)
+    testImplementation(Deps.robolectric)
+}
