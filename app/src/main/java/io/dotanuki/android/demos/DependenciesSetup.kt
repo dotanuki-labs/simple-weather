@@ -3,7 +3,7 @@ package io.dotanuki.android.demos
 import android.app.Application
 import io.dotanuki.android.demos.di.applicationModule
 import io.dotanuki.demos.weather.di.quotesModule
-import io.dotanuki.bootstrap.navigator.di.navigatorModule
+import io.dotanuki.demos.core.navigator.di.navigatorModule
 import org.kodein.di.DI
 import org.kodein.di.bind
 import org.kodein.di.singleton

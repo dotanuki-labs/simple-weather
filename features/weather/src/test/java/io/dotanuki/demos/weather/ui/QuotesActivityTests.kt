@@ -9,9 +9,9 @@ import io.dotanuki.demos.weather.presentation.QuotesScreenState.Idle
 import io.dotanuki.demos.weather.presentation.QuotesScreenState.Loading
 import io.dotanuki.demos.weather.ui.FakeQuotesScreen.Companion.quotesScreen
 import io.dotanuki.demos.weather.util.RawQuotesResponseBuilder
-import io.dotanuki.bootstrap.networking.errors.RemoteServiceIntegrationError
-import io.dotanuki.bootstrap.testing.app.TestApplication
-import io.dotanuki.bootstrap.testing.app.whenActivityResumed
+import io.dotanuki.demos.core.networking.errors.RemoteServiceIntegrationError
+import io.dotanuki.demos.testing.app.TestApplication
+import io.dotanuki.demos.testing.app.whenActivityResumed
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After

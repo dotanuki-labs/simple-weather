@@ -3,9 +3,9 @@ package io.dotanuki.android.demos
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import io.dotanuki.bootstrap.common.android.selfBind
-import io.dotanuki.bootstrap.navigator.Navigator
-import io.dotanuki.bootstrap.navigator.Screen
+import io.dotanuki.demos.common.android.selfBind
+import io.dotanuki.demos.core.navigator.Navigator
+import io.dotanuki.demos.core.navigator.Screen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.kodein.di.DIAware

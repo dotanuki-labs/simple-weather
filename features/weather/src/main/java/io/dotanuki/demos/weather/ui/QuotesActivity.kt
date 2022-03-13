@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import io.dotanuki.bootstrap.common.android.selfBind
+import io.dotanuki.demos.common.android.selfBind
 import io.dotanuki.demos.weather.presentation.QuotesScreenInteraction
 import io.dotanuki.demos.weather.presentation.QuotesViewModel
 import kotlinx.coroutines.launch

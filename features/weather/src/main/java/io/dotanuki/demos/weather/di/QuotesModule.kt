@@ -3,13 +3,13 @@ package io.dotanuki.demos.weather.di
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import io.dotanuki.bootstrap.common.kodein.KodeinTags
+import io.dotanuki.demos.common.kodein.KodeinTags
 import io.dotanuki.demos.weather.infrastrucure.QuotesInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.QuotesRestService
 import io.dotanuki.demos.weather.presentation.QuotesViewModel
 import io.dotanuki.demos.weather.ui.QuotesScreen
 import io.dotanuki.demos.weather.ui.WrappedQuotesScreen
-import io.dotanuki.bootstrap.networking.RestServiceBuilder
+import io.dotanuki.demos.core.networking.RestServiceBuilder
 import org.kodein.di.DI
 import org.kodein.di.bind
 import org.kodein.di.instance

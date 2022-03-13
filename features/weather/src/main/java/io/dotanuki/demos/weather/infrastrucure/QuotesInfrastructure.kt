@@ -1,7 +1,7 @@
 package io.dotanuki.demos.weather.infrastrucure
 
 import io.dotanuki.demos.weather.domain.Quote
-import io.dotanuki.bootstrap.networking.managedExecution
+import io.dotanuki.demos.core.networking.managedExecution
 
 object QuotesInfrastructureError : Throwable("Missing fields in the expected json response")
 

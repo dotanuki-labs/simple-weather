@@ -2,7 +2,7 @@ package io.dotanuki.android.demos.navigation
 
 import android.app.Activity
 import io.dotanuki.demos.weather.ui.QuotesActivity
-import io.dotanuki.bootstrap.navigator.Screen
+import io.dotanuki.demos.core.navigator.Screen
 
 object ScreenLinks {
 

@@ -1,7 +1,7 @@
 package io.dotanuki.demos.weather.ui
 
 import io.dotanuki.demos.weather.infrastrucure.QuotesRestService
-import io.dotanuki.bootstrap.networking.RestServiceBuilder
+import io.dotanuki.demos.core.networking.RestServiceBuilder
 import okhttp3.mockwebserver.MockWebServer
 import org.kodein.di.DI
 import org.kodein.di.bind

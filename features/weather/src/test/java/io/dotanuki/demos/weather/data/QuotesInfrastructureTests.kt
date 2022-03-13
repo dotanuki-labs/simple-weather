@@ -2,9 +2,9 @@ package io.dotanuki.demos.weather.data
 
 import com.google.common.truth.Truth.assertAbout
 import com.google.common.truth.Truth.assertThat
-import io.dotanuki.bootstrap.networking.RestServiceBuilder
-import io.dotanuki.bootstrap.networking.errors.RemoteServiceIntegrationError
-import io.dotanuki.bootstrap.testing.truth.EspeculativeExecution
+import io.dotanuki.demos.core.networking.RestServiceBuilder
+import io.dotanuki.demos.core.networking.errors.RemoteServiceIntegrationError
+import io.dotanuki.demos.testing.commons.truth.EspeculativeExecution
 import io.dotanuki.demos.weather.domain.Quote
 import io.dotanuki.demos.weather.infrastrucure.QuotesInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.QuotesInfrastructureError
