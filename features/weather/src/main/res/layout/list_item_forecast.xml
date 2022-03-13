@@ -18,13 +18,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-            tools:text="Day 1 - Sunny" />
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textSize="20sp"
+            tools:text="Day 1 : Cloudy with raining" />
 
         <ImageView
             android:id="@+id/imageWeatherPreview"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/help_circle" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

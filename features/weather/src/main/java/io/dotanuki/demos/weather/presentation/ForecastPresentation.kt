@@ -20,7 +20,7 @@ data class WeatherRow(
 
 fun List<Weather>.toPages(): List<ForecastPage> {
 
-    fun Weather.toRow(): WeatherRow = WeatherRow("Day : $daysAhead - $description")
+    fun Weather.toRow(): WeatherRow = WeatherRow("Day $daysAhead : $description")
 
     val upcoming = ForecastPage(
         titleResource = R.string.forecast_page_upcoming,

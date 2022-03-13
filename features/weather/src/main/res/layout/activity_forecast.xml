@@ -2,7 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/listingScreenRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,45 +11,38 @@
         android:background="@color/screenBackground">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/listingToolbar"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@null"
+            android:background="@android:color/background_light"
             android:minHeight="?android:attr/actionBarSize"
             app:layout_collapseMode="none"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:title="@string/app_name"
+            app:title="@string/forecast_screen_name"
             app:titleTextColor="@android:color/black" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/pagerTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/listingSwipeToRefresh"
+        android:id="@+id/swipeToRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/forecastPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/pagerTabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/forecastPager"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+            android:layout_height="match_parent" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
-        android:id="@+id/listingErrorState"
+        android:id="@+id/errorStateContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

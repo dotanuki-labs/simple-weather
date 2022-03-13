@@ -3,4 +3,6 @@
     <string name="button_retry">Retry</string>
     <string name="forecast_page_upcoming">Upcoming</string>
     <string name="forecast_page_hottest">Hottest</string>
+    <string name="forecast_screen_name">Forecast</string>
+    <string name="forecast_empty_content">No hot days ahead</string>
 </resources>

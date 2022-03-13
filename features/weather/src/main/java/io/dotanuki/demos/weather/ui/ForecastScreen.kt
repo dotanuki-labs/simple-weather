@@ -3,8 +3,8 @@ package io.dotanuki.demos.weather.ui
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import iio.dotanuki.demos.weather.databinding.ActivityQuotesBinding
+import com.google.android.material.tabs.TabLayoutMediator
+import iio.dotanuki.demos.weather.databinding.ActivityForecastBinding
 import io.dotanuki.demos.weather.presentation.ForecastPage
 import io.dotanuki.demos.weather.presentation.ForecastScreenState
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Failed
@@ -26,13 +26,13 @@ interface ForecastScreen {
 class WrappedForecastScreen : ForecastScreen {
 
     private lateinit var hostActivity: AppCompatActivity
-    private lateinit var bindings: ActivityQuotesBinding
+    private lateinit var bindings: ActivityForecastBinding
     private lateinit var screenCallbacks: ForecastScreen.Callbacks
 
     override fun link(host: AppCompatActivity, callbacks: ForecastScreen.Callbacks): View {
         hostActivity = host
         screenCallbacks = callbacks
-        bindings = ActivityQuotesBinding.inflate(hostActivity.layoutInflater)
+        bindings = ActivityForecastBinding.inflate(hostActivity.layoutInflater)
         return bindings.root
     }
 
@@ -47,30 +47,34 @@ class WrappedForecastScreen : ForecastScreen {
 
     private fun preExecution() {
         bindings.run {
-            listingErrorState.visibility = View.GONE
-            listingSwipeToRefresh.isRefreshing = false
-            listingSwipeToRefresh.setOnRefreshListener { screenCallbacks.onRefresh() }
-            listingRecyclerView.layoutManager = LinearLayoutManager(hostActivity)
+            errorStateContainer.visibility = View.GONE
+            swipeToRefresh.isRefreshing = false
+            swipeToRefresh.setOnRefreshListener { screenCallbacks.onRefresh() }
         }
     }
 
     private fun showExecuting() {
         bindings.run {
-            listingSwipeToRefresh.isRefreshing = true
+            swipeToRefresh.isRefreshing = true
         }
     }
 
     private fun showResults(pages: List<ForecastPage>) {
         bindings.run {
-            listingSwipeToRefresh.isRefreshing = false
-            Log.v("Results", pages.toString())
+            swipeToRefresh.isRefreshing = false
+            forecastPager.adapter = ForecastPagerAdapter(pages)
+
+            TabLayoutMediator(pagerTabs, forecastPager) { tab, position ->
+                tab.text = hostActivity.getString(pages[position].titleResource)
+            }.attach()
         }
     }
 
     private fun showErrorState(reason: Throwable) {
+        Log.e("ForecastActivity", "Failed on loading forecasts", reason)
         bindings.run {
-            listingErrorState.visibility = View.VISIBLE
-            listingSwipeToRefresh.isRefreshing = true
+            errorStateContainer.visibility = View.VISIBLE
+            swipeToRefresh.isRefreshing = true
         }
     }
 }
