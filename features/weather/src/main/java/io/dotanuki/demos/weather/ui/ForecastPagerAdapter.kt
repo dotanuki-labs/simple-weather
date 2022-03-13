@@ -4,16 +4,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import iio.dotanuki.demos.weather.R
+import io.dotanuki.demos.weather.navigation.WeatherNavigator
 import io.dotanuki.demos.weather.presentation.ForecastPage
 import io.dotanuki.demos.weather.presentation.ForecastPageContent
 
-class ForecastPagerAdapter(private val pages: List<ForecastPage>) :
+class ForecastPagerAdapter(
+    private val pages: List<ForecastPage>
+) :
     RecyclerView.Adapter<ForecastPagerAdapter.ViewHolder>() {
 
     class ViewHolder(private val root: View) : RecyclerView.ViewHolder(root) {
+
+        private val navigator by lazy {
+            WeatherNavigator(root.context as AppCompatActivity)
+        }
+
         fun bind(page: ForecastPage) {
             when (page.content) {
                 ForecastPageContent.Empty -> showEmptyContent()
@@ -25,7 +34,7 @@ class ForecastPagerAdapter(private val pages: List<ForecastPage>) :
             root.findViewById<TextView>(R.id.textEmptyContent).visibility = View.GONE
             val recyclerView = root.findViewById<RecyclerView>(R.id.contentRecyclerView)
             recyclerView.layoutManager = LinearLayoutManager(root.context)
-            recyclerView.adapter = ForecastRecyclerAdapter(content.rows)
+            recyclerView.adapter = ForecastRecyclerAdapter(navigator, content.rows)
         }
 
         private fun showEmptyContent() {
