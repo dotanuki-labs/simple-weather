@@ -2,6 +2,7 @@ package io.dotanuki.demos.weather.infrastrucure
 
 import io.dotanuki.demos.core.networking.managedExecution
 import io.dotanuki.demos.weather.domain.ComputeRainExpectation
+import io.dotanuki.demos.weather.domain.RelatedImage
 import io.dotanuki.demos.weather.domain.Weather
 
 class WeatherInfrastructure(private val service: WeatherRestService) {
@@ -17,7 +18,7 @@ class WeatherInfrastructure(private val service: WeatherRestService) {
                 description = it.description,
                 maxTemperature = it.high,
                 minTemperature = it.low,
-                relatedImageUrl = it.image,
+                relatedImage = RelatedImage(it.image),
                 rainExpectation = ComputeRainExpectation(it.chanceRain)
             )
         }

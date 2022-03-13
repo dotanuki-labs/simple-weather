@@ -3,8 +3,11 @@ package io.dotanuki.demos.weather.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.size.Size
 import iio.dotanuki.demos.weather.R
 import io.dotanuki.demos.weather.navigation.WeatherNavigator
 import io.dotanuki.demos.weather.presentation.WeatherRow
@@ -21,10 +24,16 @@ class ForecastRecyclerAdapter(
 
         fun bind(row: WeatherRow) {
             itemView.run {
-                val contentTextView = itemView.findViewById<TextView>(R.id.textWeatherContent)
+                val contentTextView = findViewById<TextView>(R.id.textWeatherContent)
                 contentTextView.text = row.title
                 setOnClickListener { navigator.toDetails(row.title) }
-                // itemView.findViewById<ImageView>(R.id.imageWeatherPreview).load()
+
+                findViewById<ImageView>(R.id.imageWeatherPreview).load(row.relatedImage.downloadedFile) {
+                    crossfade(true)
+                    placeholder(R.drawable.help_circle)
+                    error(R.drawable.help_circle)
+                    size(Size(64, 48))
+                }
             }
         }
     }

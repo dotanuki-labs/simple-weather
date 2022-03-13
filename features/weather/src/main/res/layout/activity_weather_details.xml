@@ -38,8 +38,8 @@
         android:layout_margin="16dp"
         android:id="@+id/imageWeatherPreview"
         android:layout_width="match_parent"
-        android:src="@drawable/help_circle"
-        android:layout_height="240dp" />
+        android:layout_height="240dp"
+        android:src="@drawable/help_circle" />
 
     <View
         android:layout_width="1dp"

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import io.dotanuki.demos.common.kodein.KodeinTags
 import io.dotanuki.demos.core.networking.RestServiceBuilder
+import io.dotanuki.demos.weather.domain.ForecastRetriever
 import io.dotanuki.demos.weather.infrastrucure.ImagesInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.WeatherInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.WeatherRestService
@@ -29,13 +30,30 @@ val weatherModule = DI.Module("weather-module") {
     }
 
     bind {
+        provider { WeatherInfrastructure(instance()) }
+    }
+
+    bind {
+        provider {
+            val host: FragmentActivity = instance(KodeinTags.hostActivity)
+            ImagesInfrastructure(host.cacheDir)
+        }
+    }
+
+    bind {
+        provider {
+            ForecastRetriever(instance(), instance())
+        }
+    }
+
+    bind {
         provider {
             @Suppress("UNCHECKED_CAST") val factory = object : ViewModelProvider.Factory {
 
-                val infrastructure = WeatherInfrastructure(instance())
+                val weatherInfra = WeatherInfrastructure(instance())
 
                 override fun <VM : ViewModel> create(modelClass: Class<VM>) =
-                    ForecastViewModel(infrastructure) as VM
+                    ForecastViewModel(instance()) as VM
             }
 
             val host: FragmentActivity = instance(KodeinTags.hostActivity)
@@ -45,17 +63,12 @@ val weatherModule = DI.Module("weather-module") {
 
     bind {
         provider {
-
-            val host: FragmentActivity = instance(KodeinTags.hostActivity)
-
             @Suppress("UNCHECKED_CAST") val factory = object : ViewModelProvider.Factory {
-
-                val infrastructure = ImagesInfrastructure(host.cacheDir)
-
                 override fun <VM : ViewModel> create(modelClass: Class<VM>) =
-                    WeatherDetailsViewModel(infrastructure) as VM
+                    WeatherDetailsViewModel(instance()) as VM
             }
 
+            val host: FragmentActivity = instance(KodeinTags.hostActivity)
             ViewModelProvider(host, factory)[WeatherDetailsViewModel::class.java]
         }
     }

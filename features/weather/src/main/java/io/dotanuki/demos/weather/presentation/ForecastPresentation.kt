@@ -2,6 +2,7 @@ package io.dotanuki.demos.weather.presentation
 
 import iio.dotanuki.demos.weather.R
 import io.dotanuki.demos.weather.domain.RainExpectation
+import io.dotanuki.demos.weather.domain.RelatedImage
 import io.dotanuki.demos.weather.domain.Weather
 
 data class ForecastPage(
@@ -15,12 +16,13 @@ sealed class ForecastPageContent {
 }
 
 data class WeatherRow(
-    val title: String
+    val title: String,
+    val relatedImage: RelatedImage
 )
 
 fun List<Weather>.toPages(): List<ForecastPage> {
 
-    fun Weather.toRow(): WeatherRow = WeatherRow("Day $daysAhead : $description")
+    fun Weather.toRow(): WeatherRow = WeatherRow("Day $daysAhead : $description", relatedImage)
 
     val upcoming = ForecastPage(
         titleResource = R.string.forecast_page_upcoming,
