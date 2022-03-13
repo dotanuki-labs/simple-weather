@@ -30,4 +30,8 @@ object RawForecastResponseBuilder {
     )
 
     fun standard(): String = Json.encodeToString(baseline)
+
+    fun noHotDays(): String = Json.encodeToString(
+        baseline.map { it.copy(chanceRain = 0.8f) }
+    )
 }
