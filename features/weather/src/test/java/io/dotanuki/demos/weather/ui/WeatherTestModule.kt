@@ -1,7 +1,7 @@
 package io.dotanuki.demos.weather.ui
 
-import io.dotanuki.demos.weather.infrastrucure.QuotesRestService
 import io.dotanuki.demos.core.networking.RestServiceBuilder
+import io.dotanuki.demos.weather.infrastrucure.WeatherRestService
 import okhttp3.mockwebserver.MockWebServer
 import org.kodein.di.DI
 import org.kodein.di.bind
@@ -11,14 +11,14 @@ fun quotesTestModule(server: MockWebServer) = DI.Module("quotes-test-module") {
 
     bind(overrides = true) {
         singleton {
-            RestServiceBuilder.build<QuotesRestService>(server.url("/"))
+            RestServiceBuilder.build<WeatherRestService>(server.url("/"))
         }
     }
 
-    bind<QuotesScreen>(overrides = true) {
+    bind<ForecastScreen>(overrides = true) {
         // Make sure the same instance is provided to both FactsActivity and Tests
         singleton {
-            FakeQuotesScreen()
+            FakeForecastScreen()
         }
     }
 }

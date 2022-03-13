@@ -2,7 +2,7 @@ package io.dotanuki.android.demos
 
 import android.app.Application
 import io.dotanuki.android.demos.di.applicationModule
-import io.dotanuki.demos.weather.di.quotesModule
+import io.dotanuki.demos.weather.di.weatherModule
 import io.dotanuki.demos.core.navigator.di.navigatorModule
 import org.kodein.di.DI
 import org.kodein.di.bind
@@ -22,6 +22,6 @@ class DependenciesSetup(private val app: Application) {
     private val modules = listOf(
         applicationModule,
         navigatorModule,
-        quotesModule
+        weatherModule
     )
 }
