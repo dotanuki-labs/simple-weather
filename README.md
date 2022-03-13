@@ -1,21 +1,12 @@
-# Android Bootstrap
+# Simple Weather
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
-[![Maintainability](https://api.codeclimate.com/v1/badges/42704b7b56bbdba33b99/maintainability)](https://codeclimate.com/github/dotanuki-labs/android-bootstrap/maintainability)
 [![Main](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml/badge.svg)](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml)
 
 > An Android App for demo purposes
 
-## About
-
-> TODO
-
-Here you will find a codebase powered by tests in all semantic levels (unit, integration, acceptance)
-as well an architectural design that promotes discipline over state, using Kotlin Coroutines +
-Kotlin Flows as foundation for a pragmatic unidirectional dataflow implementation.
-
 ## Project Overview
 
-> TODO
+Implements list and details screen populating data from a Mock API
 
 ## Implementation Highlights
 
@@ -29,15 +20,21 @@ Kotlin Flows as foundation for a pragmatic unidirectional dataflow implementatio
 
 ## Building and Running
 
-If you want a simple run over some task of the CI pipeline, just use the companion script
-
-> TODO
+This project requires
+[latest stable release of Android Studio](https://developer.android.com/studio/releases),
+ie, 7.x.z (Bumblebee) and also should work fine with Beta/Canary versions of the IDE.
 
 Also note that local builds **require JDK11**, since this project compiles against Java11 bytecode.
 
-In addition to that, this project requires
-[latest stable release of Android Studio](https://developer.android.com/studio/releases),
-ie, 7.x.z (Artic Fox) or newer.
+You can also run tasks from the CLI :
+
+```bash
+./gradlew clean detekt ktlintCheck
+./gradlew clean test
+./gradlew clean app:assembleDebug
+```
+
+These tasks also executed by the [CI Workflow](https://github.com/dotanuki-labs/simple-weather/actions
 
 ## Author
 
