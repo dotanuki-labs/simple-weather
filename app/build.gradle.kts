@@ -8,7 +8,7 @@ dependencies {
     implementation(projects.platform.common.commonAndroid)
     implementation(projects.platform.common.commonKodein)
     implementation(projects.platform.common.commonStatic)
-    implementation(projects.features.listing)
+    implementation(projects.features.weather)
 
     implementation(Deps.kodeinDi)
     implementation(Deps.kodeinType)

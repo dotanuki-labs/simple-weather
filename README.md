@@ -1,9 +1,9 @@
 # Android Bootstrap
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/42704b7b56bbdba33b99/maintainability)](https://codeclimate.com/github/dotanuki-labs/android-bootstrap/maintainability)
-[![Main](https://github.com/dotanuki-labs/android-bootstrap/actions/workflows/main.yml/badge.svg)](https://github.com/dotanuki-labs/android-bootstrap/actions/workflows/main.yml)
+[![Main](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml/badge.svg)](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml)
 
-> An app that existed even before Android existed! 🔥
+> An Android App for demo purposes
 
 ## About
 
@@ -31,9 +31,7 @@ Kotlin Flows as foundation for a pragmatic unidirectional dataflow implementatio
 
 If you want a simple run over some task of the CI pipeline, just use the companion script
 
-```
-./scripts/ci-tasks.sh
-```
+> TODO
 
 Also note that local builds **require JDK11**, since this project compiles against Java11 bytecode.
 
