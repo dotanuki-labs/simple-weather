@@ -10,7 +10,7 @@ import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenState.
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenState.ImageDownloadFailed
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenState.ImageDownloaded
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenState.ImageRequested
-import io.dotanuki.demos.weather.navigation.WeatherDetailsExtras
+import io.dotanuki.demos.weather.ui.navigation.WeatherDetailsExtras
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

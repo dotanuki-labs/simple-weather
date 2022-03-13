@@ -6,7 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.dotanuki.demos.common.android.selfBind
-import io.dotanuki.demos.weather.navigation.WeatherNavigator
+import io.dotanuki.demos.weather.ui.navigation.WeatherNavigator
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenInteraction
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsScreenInteraction.RequestedImageDownload
 import io.dotanuki.demos.weather.presentation.details.WeatherDetailsViewModel

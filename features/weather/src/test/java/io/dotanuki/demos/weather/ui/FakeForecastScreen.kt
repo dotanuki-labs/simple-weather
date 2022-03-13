@@ -2,8 +2,9 @@ package io.dotanuki.demos.weather.ui
 
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import io.dotanuki.demos.weather.presentation.ForecastScreenState
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState
 import io.dotanuki.demos.testing.app.TestApplication
+import io.dotanuki.demos.weather.ui.forecast.ForecastScreen
 import org.kodein.di.direct
 import org.kodein.di.instance
 

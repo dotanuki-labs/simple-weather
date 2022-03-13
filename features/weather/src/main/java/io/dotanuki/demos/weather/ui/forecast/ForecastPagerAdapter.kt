@@ -1,4 +1,4 @@
-package io.dotanuki.demos.weather.ui
+package io.dotanuki.demos.weather.ui.forecast
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import iio.dotanuki.demos.weather.R
-import io.dotanuki.demos.weather.navigation.WeatherNavigator
-import io.dotanuki.demos.weather.presentation.ForecastPage
-import io.dotanuki.demos.weather.presentation.ForecastPageContent
+import io.dotanuki.demos.weather.ui.navigation.WeatherNavigator
+import io.dotanuki.demos.weather.presentation.forecast.ForecastPage
+import io.dotanuki.demos.weather.presentation.forecast.ForecastPageContent
 
 class ForecastPagerAdapter(
     private val pages: List<ForecastPage>

@@ -1,4 +1,4 @@
-package io.dotanuki.demos.weather.ui
+package io.dotanuki.demos.weather.ui.forecast
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.dotanuki.demos.common.android.selfBind
-import io.dotanuki.demos.weather.presentation.ForecastScreenInteraction
-import io.dotanuki.demos.weather.presentation.ForecastViewModel
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenInteraction
+import io.dotanuki.demos.weather.presentation.forecast.ForecastViewModel
 import kotlinx.coroutines.launch
 import org.kodein.di.DIAware
 import org.kodein.di.instance

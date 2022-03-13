@@ -1,16 +1,16 @@
-package io.dotanuki.demos.weather.ui
+package io.dotanuki.demos.weather.ui.forecast
 
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import iio.dotanuki.demos.weather.databinding.ActivityForecastBinding
-import io.dotanuki.demos.weather.presentation.ForecastPage
-import io.dotanuki.demos.weather.presentation.ForecastScreenState
-import io.dotanuki.demos.weather.presentation.ForecastScreenState.Failed
-import io.dotanuki.demos.weather.presentation.ForecastScreenState.Idle
-import io.dotanuki.demos.weather.presentation.ForecastScreenState.Loading
-import io.dotanuki.demos.weather.presentation.ForecastScreenState.Success
+import io.dotanuki.demos.weather.presentation.forecast.ForecastPage
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState.Failed
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState.Idle
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState.Loading
+import io.dotanuki.demos.weather.presentation.forecast.ForecastScreenState.Success
 
 interface ForecastScreen {
 

@@ -1,6 +1,6 @@
 package io.dotanuki.demos.weather.presentation.details
 
-import io.dotanuki.demos.weather.navigation.WeatherDetailsExtras
+import io.dotanuki.demos.weather.ui.navigation.WeatherDetailsExtras
 
 sealed class WeatherDetailsScreenInteraction {
     data class OpenedScreen(val extras: WeatherDetailsExtras) : WeatherDetailsScreenInteraction()
