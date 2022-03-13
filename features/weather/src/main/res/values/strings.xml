@@ -4,5 +4,7 @@
     <string name="forecast_page_upcoming">Upcoming</string>
     <string name="forecast_page_hottest">Hottest</string>
     <string name="forecast_screen_name">Forecast</string>
+    <string name="details_screen_name">Wheater Details</string>
     <string name="forecast_empty_content">No hot days ahead</string>
+    <string name="button_download_related_image">Download Related Image</string>
 </resources>
