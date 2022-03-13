@@ -10,7 +10,7 @@ import io.dotanuki.demos.weather.domain.Quote
 import io.dotanuki.demos.weather.presentation.ForecastScreenState
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Idle
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Loading
-import io.dotanuki.demos.weather.ui.FakeQuotesScreen.Companion.quotesScreen
+import io.dotanuki.demos.weather.ui.FakeForecastScreen.Companion.quotesScreen
 import io.dotanuki.demos.weather.util.RawForecastResponseBuilder
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -23,7 +23,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class QuotesActivityTests {
 
-    lateinit var screen: FakeQuotesScreen
+    lateinit var screen: FakeForecastScreen
     lateinit var server: MockWebServer
 
     @Before fun `before each test`() {

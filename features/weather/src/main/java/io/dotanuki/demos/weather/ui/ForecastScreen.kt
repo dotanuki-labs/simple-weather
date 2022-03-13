@@ -1,17 +1,18 @@
 package io.dotanuki.demos.weather.ui
 
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import iio.dotanuki.demos.weather.databinding.ActivityQuotesBinding
-import io.dotanuki.demos.weather.domain.Quote
+import io.dotanuki.demos.weather.presentation.ForecastPage
 import io.dotanuki.demos.weather.presentation.ForecastScreenState
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Failed
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Idle
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Loading
 import io.dotanuki.demos.weather.presentation.ForecastScreenState.Success
 
-interface QuotesScreen {
+interface ForecastScreen {
 
     interface Callbacks {
         fun onRefresh()
@@ -22,13 +23,13 @@ interface QuotesScreen {
     fun update(newState: ForecastScreenState)
 }
 
-class WrappedForecastScreen : QuotesScreen {
+class WrappedForecastScreen : ForecastScreen {
 
     private lateinit var hostActivity: AppCompatActivity
     private lateinit var bindings: ActivityQuotesBinding
-    private lateinit var screenCallbacks: QuotesScreen.Callbacks
+    private lateinit var screenCallbacks: ForecastScreen.Callbacks
 
-    override fun link(host: AppCompatActivity, callbacks: QuotesScreen.Callbacks): View {
+    override fun link(host: AppCompatActivity, callbacks: ForecastScreen.Callbacks): View {
         hostActivity = host
         screenCallbacks = callbacks
         bindings = ActivityQuotesBinding.inflate(hostActivity.layoutInflater)
@@ -40,7 +41,7 @@ class WrappedForecastScreen : QuotesScreen {
             Idle -> preExecution()
             Loading -> showExecuting()
             is Failed -> showErrorState(newState.reason)
-            is Success -> showResults(newState.quotes)
+            is Success -> showResults(newState.pages)
         }
     }
 
@@ -59,10 +60,10 @@ class WrappedForecastScreen : QuotesScreen {
         }
     }
 
-    private fun showResults(quotes: List<Quote>) {
+    private fun showResults(pages: List<ForecastPage>) {
         bindings.run {
             listingSwipeToRefresh.isRefreshing = false
-            listingRecyclerView.adapter = ForecastRecyclerAdapter(quotes)
+            Log.v("Results", pages.toString())
         }
     }
 

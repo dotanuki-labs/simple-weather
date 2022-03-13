@@ -19,7 +19,7 @@ class ForecastViewModel(private val infrastructure: WeatherInfrastructure) : Vie
     init {
         viewModelScope.launch {
             interactions.consumeAsFlow().collect {
-                showQuotes()
+                showForecasts()
             }
         }
     }
@@ -31,10 +31,10 @@ class ForecastViewModel(private val infrastructure: WeatherInfrastructure) : Vie
         }
     }
 
-    private suspend fun showQuotes() {
+    private suspend fun showForecasts() {
         states.value = try {
-            // ForecastScreenState.Success(infrastructure.forecastForTenDays())
-            TODO()
+            val forecast = infrastructure.forecastForTenDays()
+            ForecastScreenState.Success(forecast.toPages())
         } catch (error: Throwable) {
             ForecastScreenState.Failed(error)
         }

@@ -15,10 +15,10 @@ fun quotesTestModule(server: MockWebServer) = DI.Module("quotes-test-module") {
         }
     }
 
-    bind<QuotesScreen>(overrides = true) {
+    bind<ForecastScreen>(overrides = true) {
         // Make sure the same instance is provided to both FactsActivity and Tests
         singleton {
-            FakeQuotesScreen()
+            FakeForecastScreen()
         }
     }
 }

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="button_retry">Retry</string>
+    <string name="forecast_page_upcoming">Upcoming</string>
+    <string name="forecast_page_hottest">Hottest</string>
 </resources>

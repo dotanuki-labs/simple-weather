@@ -8,7 +8,7 @@ import io.dotanuki.demos.core.networking.RestServiceBuilder
 import io.dotanuki.demos.weather.infrastrucure.WeatherInfrastructure
 import io.dotanuki.demos.weather.infrastrucure.WeatherRestService
 import io.dotanuki.demos.weather.presentation.ForecastViewModel
-import io.dotanuki.demos.weather.ui.QuotesScreen
+import io.dotanuki.demos.weather.ui.ForecastScreen
 import io.dotanuki.demos.weather.ui.WrappedForecastScreen
 import org.kodein.di.DI
 import org.kodein.di.bind
@@ -39,7 +39,7 @@ val weatherModule = DI.Module("weather-module") {
         }
     }
 
-    bind<QuotesScreen> {
+    bind<ForecastScreen> {
         provider {
             WrappedForecastScreen()
         }

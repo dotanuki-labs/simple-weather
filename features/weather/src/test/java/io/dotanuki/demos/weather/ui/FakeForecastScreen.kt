@@ -7,12 +7,12 @@ import io.dotanuki.demos.testing.app.TestApplication
 import org.kodein.di.direct
 import org.kodein.di.instance
 
-class FakeQuotesScreen : QuotesScreen {
+class FakeForecastScreen : ForecastScreen {
 
     val trackedStates = mutableListOf<ForecastScreenState>()
     var isLinked: Boolean = false
 
-    override fun link(host: AppCompatActivity, callbacks: QuotesScreen.Callbacks): View {
+    override fun link(host: AppCompatActivity, callbacks: ForecastScreen.Callbacks): View {
         isLinked = true
         return View(host)
     }
@@ -22,7 +22,7 @@ class FakeQuotesScreen : QuotesScreen {
     }
 
     companion object {
-        fun TestApplication.quotesScreen(): FakeQuotesScreen =
-            di.direct.instance<QuotesScreen>() as FakeQuotesScreen
+        fun TestApplication.quotesScreen(): FakeForecastScreen =
+            di.direct.instance<ForecastScreen>() as FakeForecastScreen
     }
 }

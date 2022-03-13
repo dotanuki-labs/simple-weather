@@ -17,9 +17,9 @@ class ForecastActivity : AppCompatActivity(), DIAware {
     override val di by selfBind()
 
     private val viewModel by instance<ForecastViewModel>()
-    private val screen by instance<QuotesScreen>()
+    private val screen by instance<ForecastScreen>()
 
-    private val callbacks = object : QuotesScreen.Callbacks {
+    private val callbacks = object : ForecastScreen.Callbacks {
         override fun onRefresh() {
             viewModel.handle(ForecastScreenInteraction.OpenedScreen)
         }
