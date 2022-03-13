@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import iio.dotanuki.demos.weather.databinding.ActivityQuotesBinding
 import io.dotanuki.demos.weather.domain.Quote
-import io.dotanuki.demos.weather.presentation.QuotesScreenState
-import io.dotanuki.demos.weather.presentation.QuotesScreenState.Failed
-import io.dotanuki.demos.weather.presentation.QuotesScreenState.Idle
-import io.dotanuki.demos.weather.presentation.QuotesScreenState.Loading
-import io.dotanuki.demos.weather.presentation.QuotesScreenState.Success
+import io.dotanuki.demos.weather.presentation.ForecastScreenState
+import io.dotanuki.demos.weather.presentation.ForecastScreenState.Failed
+import io.dotanuki.demos.weather.presentation.ForecastScreenState.Idle
+import io.dotanuki.demos.weather.presentation.ForecastScreenState.Loading
+import io.dotanuki.demos.weather.presentation.ForecastScreenState.Success
 
 interface QuotesScreen {
 
@@ -19,10 +19,10 @@ interface QuotesScreen {
 
     fun link(host: AppCompatActivity, callbacks: Callbacks): View
 
-    fun update(newState: QuotesScreenState)
+    fun update(newState: ForecastScreenState)
 }
 
-class WrappedQuotesScreen : QuotesScreen {
+class WrappedForecastScreen : QuotesScreen {
 
     private lateinit var hostActivity: AppCompatActivity
     private lateinit var bindings: ActivityQuotesBinding
@@ -35,7 +35,7 @@ class WrappedQuotesScreen : QuotesScreen {
         return bindings.root
     }
 
-    override fun update(newState: QuotesScreenState) {
+    override fun update(newState: ForecastScreenState) {
         when (newState) {
             Idle -> preExecution()
             Loading -> showExecuting()
@@ -62,7 +62,7 @@ class WrappedQuotesScreen : QuotesScreen {
     private fun showResults(quotes: List<Quote>) {
         bindings.run {
             listingSwipeToRefresh.isRefreshing = false
-            listingRecyclerView.adapter = QuotesRecyclerAdapter(quotes)
+            listingRecyclerView.adapter = ForecastRecyclerAdapter(quotes)
         }
     }
 

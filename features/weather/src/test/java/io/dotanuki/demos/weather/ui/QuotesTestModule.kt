@@ -1,6 +1,6 @@
 package io.dotanuki.demos.weather.ui
 
-import io.dotanuki.demos.weather.infrastrucure.QuotesRestService
+import io.dotanuki.demos.weather.infrastrucure.WeatherRestService
 import io.dotanuki.demos.core.networking.RestServiceBuilder
 import okhttp3.mockwebserver.MockWebServer
 import org.kodein.di.DI
@@ -11,7 +11,7 @@ fun quotesTestModule(server: MockWebServer) = DI.Module("quotes-test-module") {
 
     bind(overrides = true) {
         singleton {
-            RestServiceBuilder.build<QuotesRestService>(server.url("/"))
+            RestServiceBuilder.build<WeatherRestService>(server.url("/"))
         }
     }
 

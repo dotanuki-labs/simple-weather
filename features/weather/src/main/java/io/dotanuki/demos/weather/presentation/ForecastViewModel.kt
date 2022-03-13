@@ -2,17 +2,17 @@ package io.dotanuki.demos.weather.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.dotanuki.demos.weather.infrastrucure.QuotesInfrastructure
+import io.dotanuki.demos.weather.infrastrucure.WeatherInfrastructure
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
-class QuotesViewModel(private val infrastructure: QuotesInfrastructure) : ViewModel() {
+class ForecastViewModel(private val infrastructure: WeatherInfrastructure) : ViewModel() {
 
-    private val interactions = Channel<QuotesScreenInteraction>(Channel.UNLIMITED)
-    private val states = MutableStateFlow<QuotesScreenState>(QuotesScreenState.Idle)
+    private val interactions = Channel<ForecastScreenInteraction>(Channel.UNLIMITED)
+    private val states = MutableStateFlow<ForecastScreenState>(ForecastScreenState.Idle)
 
     fun bind() = states.asStateFlow()
 
@@ -24,18 +24,19 @@ class QuotesViewModel(private val infrastructure: QuotesInfrastructure) : ViewMo
         }
     }
 
-    fun handle(interaction: QuotesScreenInteraction) {
+    fun handle(interaction: ForecastScreenInteraction) {
         viewModelScope.launch {
-            states.value = QuotesScreenState.Loading
+            states.value = ForecastScreenState.Loading
             interactions.send(interaction)
         }
     }
 
     private suspend fun showQuotes() {
         states.value = try {
-            QuotesScreenState.Success(infrastructure.quotes())
+            // ForecastScreenState.Success(infrastructure.forecastForTenDays())
+            TODO()
         } catch (error: Throwable) {
-            QuotesScreenState.Failed(error)
+            ForecastScreenState.Failed(error)
         }
     }
 }

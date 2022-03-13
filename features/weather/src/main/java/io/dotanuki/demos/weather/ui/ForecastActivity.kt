@@ -6,22 +6,22 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.dotanuki.demos.common.android.selfBind
-import io.dotanuki.demos.weather.presentation.QuotesScreenInteraction
-import io.dotanuki.demos.weather.presentation.QuotesViewModel
+import io.dotanuki.demos.weather.presentation.ForecastScreenInteraction
+import io.dotanuki.demos.weather.presentation.ForecastViewModel
 import kotlinx.coroutines.launch
 import org.kodein.di.DIAware
 import org.kodein.di.instance
 
-class QuotesActivity : AppCompatActivity(), DIAware {
+class ForecastActivity : AppCompatActivity(), DIAware {
 
     override val di by selfBind()
 
-    private val viewModel by instance<QuotesViewModel>()
+    private val viewModel by instance<ForecastViewModel>()
     private val screen by instance<QuotesScreen>()
 
     private val callbacks = object : QuotesScreen.Callbacks {
         override fun onRefresh() {
-            viewModel.handle(QuotesScreenInteraction.OpenedScreen)
+            viewModel.handle(ForecastScreenInteraction.OpenedScreen)
         }
     }
 
@@ -33,7 +33,7 @@ class QuotesActivity : AppCompatActivity(), DIAware {
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.run {
-                    handle(QuotesScreenInteraction.OpenedScreen)
+                    handle(ForecastScreenInteraction.OpenedScreen)
                     bind().collect { newState ->
                         screen.update(newState)
                     }

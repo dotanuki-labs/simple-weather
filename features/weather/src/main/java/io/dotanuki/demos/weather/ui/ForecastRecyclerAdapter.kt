@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import iio.dotanuki.demos.weather.R
 import io.dotanuki.demos.weather.domain.Quote
 
-class QuotesRecyclerAdapter(private val quotes: List<Quote>) :
-    RecyclerView.Adapter<QuotesRecyclerAdapter.ViewHolder>() {
+class ForecastRecyclerAdapter(private val quotes: List<Quote>) :
+    RecyclerView.Adapter<ForecastRecyclerAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

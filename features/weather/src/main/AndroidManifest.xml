@@ -4,7 +4,7 @@
 
     <application android:theme="@style/AndroidBootstrapTheme">
         <activity
-            android:name="io.dotanuki.demos.weather.ui.QuotesActivity"
+            android:name="io.dotanuki.demos.weather.ui.ForecastActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>
