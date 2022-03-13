@@ -17,7 +17,7 @@ include(
     ":platform:common:common-static",
     ":platform:common:common-android",
     ":platform:common:common-kodein",
-    ":features:listing"
+    ":features:weather"
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

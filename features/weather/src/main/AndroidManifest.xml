@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="iio.dotanuki.demos.weather">
+
+    <application android:theme="@style/AndroidBootstrapTheme">
+        <activity
+            android:name="io.dotanuki.demos.weather.ui.QuotesActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
