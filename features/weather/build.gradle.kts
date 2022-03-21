@@ -33,7 +33,7 @@ dependencies {
     implementation(Deps.androidxRecyclerView)
     implementation(Deps.androidxCore)
     implementation(Deps.googleMaterialDesign)
-    implementation("io.coil-kt:coil:2.0.0-rc01")
+    implementation("io.coil-kt:coil:2.0.0-rc02")
 
     testImplementation(projects.platform.testing.testingApp)
     testImplementation(projects.platform.testing.testingCommons)
