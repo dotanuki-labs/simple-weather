@@ -2,7 +2,7 @@
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 [![Main](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml/badge.svg)](https://github.com/dotanuki-labs/simple-weather/actions/workflows/main.yml)
 
-> An Android App for demo purposes
+> ## ⚠️ An Android App for demo purposes. No longer maintened ⚠️ 
 
 ## Project Overview
 
